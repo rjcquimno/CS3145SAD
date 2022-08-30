@@ -12,6 +12,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <script src="//unpkg.com/alpinejs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         <script>
             tailwind.config = {
@@ -76,6 +77,7 @@
         >
             <p class="ml-2">Uptown Corporate Hotel Store System</p>
         </footer>
+        <x-flash-message/>
     </body>
 </html>
  
