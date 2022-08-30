@@ -9,6 +9,8 @@ class Inventory extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function scopeFilter($query, array $filters){
         if($filters['search'] ?? false) {
             $query->where('id','like', '%'. request('search').'%')
@@ -18,5 +20,4 @@ class Inventory extends Model
         }
     }
 
-    protected $dateFormat = 'U';
 }
