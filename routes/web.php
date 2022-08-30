@@ -15,11 +15,32 @@ use App\Http\Controllers\InventoryController;
 |
 */
 
+
+//show homepage
 Route::get('/', function () {
     return view('index');
 });
+//create form
+Route::get('create', [InventoryController::class, 'create']);
 
+//store inventory item data
+Route::post('inventory', [InventoryController::class, 'store']);
+
+//show edit form
+Route::get('edit/{inventory}', [InventoryController::class, 'edit']);
+
+//update inventory
+Route::put('inventory/{inventory}', [InventoryController::class, 'update']);
+
+//delete inventory
+Route::delete('inventory/{inventory}', [InventoryController::class, 'destroy']);
+
+
+//show inventory
 Route::get('inventory', [InventoryController::class, 'show']);
+
+
+
 
 
 
