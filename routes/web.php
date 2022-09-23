@@ -3,6 +3,7 @@
 use App\Models\Inventory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,26 @@ use App\Http\Controllers\InventoryController;
 Route::get('/', function () {
     return view('index');
 });
+
+
+
+//create form
+Route::get('createsupplier', [SupplierController::class, 'create']);
+
+//store inventory item data
+Route::post('supplier', [SupplierController::class, 'store']);
+
+//show supplier
+Route::get('supplier', [SupplierController::class, 'show']);
+
+
+//show edit form
+Route::get('editsupplier/{supplier}', [SupplierController::class, 'edit']);
+
+//delete inventory
+Route::delete('supplier/{supplier}', [SupplierController::class, 'destroy']);
+
+
 //create form
 Route::get('create', [InventoryController::class, 'create']);
 
