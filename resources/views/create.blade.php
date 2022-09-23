@@ -11,7 +11,7 @@
     <form method="POST"action="/inventory" enctype="multipart/form-data">
         
         @csrf
-    
+        
         <div class="mb-6">
             <label
                 for="item_barcode"

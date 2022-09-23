@@ -8,7 +8,7 @@
         <p class="mb-4">Edit {{$inventory->item_name}}</p>
     </header>
     
-    <form method="POST"action="/edit/{{$inventory->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/edit/{{$inventory->id}}" enctype="multipart/form-data">
         
         @csrf
 

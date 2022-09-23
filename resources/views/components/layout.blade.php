@@ -43,8 +43,8 @@
                     >
                 </li>
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
-                        > Procurement</a
+                    <a href="/supplier" class="hover:text-laravel"
+                        > Supplier</a
                     >
                 </li>
                 <li>

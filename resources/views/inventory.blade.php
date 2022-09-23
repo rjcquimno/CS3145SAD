@@ -4,7 +4,9 @@
 <h1 class="text-lg font-bold align-center">Inventory</h1>
     </section>
 @include('partials._search')
-<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">New Item</a>
+<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Stock in</a>
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>
