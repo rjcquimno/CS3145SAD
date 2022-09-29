@@ -65,3 +65,34 @@ Route::get('inventory', [InventoryController::class, 'show']);
 
 
 
+
+// Show Employees
+Route::get('/employee', [EmployeeController::class, 'show']);
+
+// Show Create Form
+Route::get('/createemployee', [EmployeeController::class, 'create']);
+
+// Store Employee Data
+Route::post('/employee', [EmployeeController::class, 'store']);
+
+// Show Edit Form
+Route::get('/editemployee/{id}', [EmployeeController::class, 'edit']);
+
+
+
+// Show Register/Create Form
+Route::get('/register', [UserController::class, 'create']);
+
+// Create New User
+Route::post('/users', [UserController::class, 'store']);
+
+// Log User Out
+Route::post('/logout', [UserController::class, 'logout']);
+
+// Show Login Form
+Route::get('/login', [UserController::class, 'login'])->name('login');
+
+// Log In User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
