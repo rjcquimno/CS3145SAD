@@ -48,17 +48,17 @@
                     >
                 </li>
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
+                    <a href="/employee" class="hover:text-laravel"
                         > Employee</a
                     >
                 </li>
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
+                    <a href="/register" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="login.html" class="hover:text-laravel"
+                    <a href="/login" class="hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >
