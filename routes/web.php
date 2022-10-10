@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\InventoryController;
-
+use App\Http\Controllers\SalesOrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,6 +100,18 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
+
+
+
+//store salesorder data
+//Route::post('salesorder', [SalesOrderController::class, 'store']);
+
+
+//show salesorder
+Route::get('salesorder', [SalesOrderController::class, 'show']);
+
+//update inventory after successful salesorder. updateInventory will also run the function for storing the SalesOrder entry.
+Route::put('salesorder', [salesOrderController::class, 'updateInventory']);
 
 
 
