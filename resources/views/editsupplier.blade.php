@@ -8,7 +8,7 @@
         <p class="mb-4">Edit {{$supplier->sup_name}}</p>
     </header>
     
-    <form method="POST" action="/editsupplier/{{$supplier->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/supplier/{{$supplier->id}}" enctype="multipart/form-data">
         
         @csrf
 

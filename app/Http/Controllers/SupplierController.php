@@ -38,6 +38,20 @@ class SupplierController extends Controller
         return view('editsupplier', ['supplier'=>$supplier]);
     }
 
+    //update item inventory data
+    public function update(Request $request, Supplier $supplier){
+        $formFields = $request->validate([
+            'sup_name' =>'required', 
+            'sup_contactPerson' => 'required',
+            'sup_address' => 'required',
+            'sup_phoneNum' => 'required|numeric|digits:11',
+            'sup_email' => ['required', 'email'],
+        ]);
+
+        $supplier->update($formFields);
+        return redirect('/supplier')->with('message', 'An item was updated successfully.');
+    }
+
     //delete item
     public function destroy(Supplier $supplier){
         $supplier->delete();

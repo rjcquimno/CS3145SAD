@@ -8,7 +8,7 @@
         <p class="mb-4">Edit {{$inventory->item_name}}</p>
     </header>
     
-    <form method="POST" action="/edit/{{$inventory->id}}" enctype="multipart/form-data">
+    <form method="POST" action="/inventory/{{$inventory->id}}" enctype="multipart/form-data">
         
         @csrf
 
@@ -62,7 +62,7 @@
                 class="border border-gray-200 rounded p-2 w-full"
                 name="item_quantity"
                 placeholder="Example: 1,2,3,4,5"
-                value="{{$inventory->item_quantity}}"
+                value="{{$inventory->item_quantity}}" 
             />
     
             @error('item_quantity')
@@ -146,7 +146,7 @@
                 rows="10"
                 placeholder="Example: The apple is color red."
                 
-            >{{"$inventory->item_barcode"}}</textarea>
+            >{{"$inventory->item_description"}}</textarea>
     
             @error('item_description')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -185,7 +185,7 @@
                 class="border border-gray-200 rounded p-2 w-full"
                 name="expire_date"
                 placeholder="Example: Remote, Boston MA, etc"
-                value="{{$inventory->expire_date}}"
+                value="{{$inventory->expire_date}}" 
             />
     
             @error('expire_date')

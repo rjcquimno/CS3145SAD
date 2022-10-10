@@ -4,14 +4,15 @@
 <h1 class="text-lg font-bold align-center">Inventory</h1>
     </section>
 @include('partials._search')
-<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Stock in</a>
+<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">New item</a>
 <br/>
 <br/>
 <br/>
 <br/>
 <br/>
-<br/>
+
 <section class="flex flex-col justify-center align-center text-center space-y-4 mb-4 ">
+    
     <table class="table-auto m-0">
         <tr class="font-bold text-center">
         

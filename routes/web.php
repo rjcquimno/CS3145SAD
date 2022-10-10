@@ -2,8 +2,9 @@
 
 use App\Models\Inventory;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +25,11 @@ Route::get('/', function () {
 
 
 
+
 //create form
 Route::get('createsupplier', [SupplierController::class, 'create']);
 
-//store inventory item data
+//store supplier item data
 Route::post('supplier', [SupplierController::class, 'store']);
 
 //show supplier
@@ -37,7 +39,10 @@ Route::get('supplier', [SupplierController::class, 'show']);
 //show edit form
 Route::get('editsupplier/{supplier}', [SupplierController::class, 'edit']);
 
-//delete inventory
+//update inventory
+Route::put('supplier/{supplier}', [SupplierController::class, 'update']);
+
+//delete supplier
 Route::delete('supplier/{supplier}', [SupplierController::class, 'destroy']);
 
 
@@ -61,22 +66,21 @@ Route::delete('inventory/{inventory}', [InventoryController::class, 'destroy']);
 Route::get('inventory', [InventoryController::class, 'show']);
 
 
-
-
-
+//show procurement
+Route::get('procurement', [InventoryController::class, 'show1']);
 
 
 // Show Employees
-Route::get('/employee', [EmployeeController::class, 'show']);
+Route::get('employee', [EmployeeController::class, 'show']);
 
 // Show Create Form
-Route::get('/createemployee', [EmployeeController::class, 'create']);
+Route::get('createemployee', [EmployeeController::class, 'create']);
 
 // Store Employee Data
-Route::post('/employee', [EmployeeController::class, 'store']);
+Route::post('employee', [EmployeeController::class, 'store']);
 
 // Show Edit Form
-Route::get('/editemployee/{id}', [EmployeeController::class, 'edit']);
+Route::get('editemployee/{id}', [EmployeeController::class, 'edit']);
 
 
 
@@ -94,5 +98,9 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
+
+
 
 

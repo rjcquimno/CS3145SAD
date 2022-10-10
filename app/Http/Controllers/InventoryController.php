@@ -18,6 +18,13 @@ class InventoryController extends Controller
         
     }
 
+    // show inventory
+    public function show1(Inventory $inventoryData){
+        $inventoryData = Inventory::first()->filter(request(['search']))->get();
+        return view('procurement', ['inventorylist'=>$inventoryData]);
+        
+    }
+
     //show create form
     public function create(){
         return view('create');
@@ -62,7 +69,7 @@ class InventoryController extends Controller
             'expire_date' => 'required'
         ]);
 
-        $inventory->create($formFields);
+        $inventory->update($formFields);
         return redirect('/inventory')->with('message', 'An item was updated successfully.');
     }
 
