@@ -10,7 +10,6 @@
 <br/>
 <br/>
 <br/>
-<br/>
 <section class="flex flex-col justify-center align-center text-center space-y-4 mb-4 ">
     <table class="table-auto m-0">
         <tr class="font-bold text-center">
@@ -27,6 +26,7 @@
     </tr>
     @foreach ($supplierlist as $supplier)
     @csrf
+
     <tr class="border-2 border-black text-center">
         
         <td class="border-2 border-black">{{$supplier['id']}}</td>

@@ -33,7 +33,7 @@
                 ><h1 class="flex space-x-6 mr-6 text-lg font-bold">UptownCorporateHotel</h1></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 <li>
-                    <a href="/salesorder" class="hover:text-laravel"
+                    <a href="register.html" class="hover:text-laravel"
                         >Cashier</a
                     >
                 </li>

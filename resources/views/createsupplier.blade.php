@@ -5,7 +5,7 @@
         <h2 class="text-2xl font-bold uppercase mb-1">
             Create Supplier
         </h2>
-        <p class="mb-4">Add a new sales order</p>
+        <p class="mb-4">Add a new supplier</p>
     </header>
     
     <form method="POST"action="/supplier" enctype="multipart/form-data">
