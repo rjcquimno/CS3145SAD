@@ -75,7 +75,7 @@ class EmployeeController extends Controller
 
         $employee->update($formFields);
 
-        return back()->with('message', 'Employee updated successfully!');
+        return redirect('/employee')->with('message', 'Employee updated successfully!');
     }
 
     // Delete Listing
