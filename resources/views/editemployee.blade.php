@@ -14,8 +14,13 @@
         @method('PUT')
         
         <div class="mb-6">
-            <label for="emp_fullName" class="inline-block text-lg mb-2">Name</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full"
+            <label 
+                for="emp_fullName" 
+                class="inline-block text-lg mb-2"
+                >Name</label>
+            <input 
+                type="text" 
+                class="border border-gray-200 rounded p-2 w-full"
                 name="emp_fullName" value="{{$employee->emp_fullName}}" />
     
             @error('emp_fullName')

@@ -44,6 +44,6 @@
     @endforeach
     </table><br>
     <a href="/createemployee" class="absolute bottom-1/3 left-10 bg-black text-white py-2 px-5">Add employee</a>
-    <a href="/createemployee" class="absolute bottom-1/3 right-10 bg-black text-white py-2 px-5">Attendance</a>
+    <a href="/employee/attendance" class="absolute bottom-1/3 right-10 bg-black text-white py-2 px-5">Attendance</a>
 </section>
 </x-layout>

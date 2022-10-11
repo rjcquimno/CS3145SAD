@@ -44,15 +44,21 @@
             <label
                 for="item_price"
                 class="inline-block text-lg mb-2"
+                >Card Type</label
+            >
+            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardnumber" placeholder="Example: Visa, MasterCard"       />
+            <label
+                for="item_price"
+                class="inline-block text-lg mb-2"
+                >Card Number</label
+            >
+            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardtype" placeholder="Example: 1234-5678-9012-3456"       />
+            <label
+                for="item_price"
+                class="inline-block text-lg mb-2"
                 >Price</label
             >
-            <input
-                type="text"
-                class="border border-gray-200 rounded p-2 w-auto"
-                name="item_price"
-                placeholder="Example: 21.22,22.36"
-                
-            />
+            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="amount_paid" placeholder="Example: 21.22,22.36"       />
     
             @error('item_price')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -63,7 +69,7 @@
             >
                 Submit Payment
             </button>
-        </div>
+        </div> 
     </tr>
     
     </table>
@@ -117,42 +123,8 @@
     
     </table>
     
-    <table class="table-auto w-25 overflow-y-scroll h-32">
-        <tr class="font-bold text-center">
-        
-        
-        <td class="border-2 border-black">ID</td>
-        <td class="border-2 border-black">Order Total</td>
-        <td class="border-2 border-black">Order Discount</td>
-        
-        <td class="border-2 border-black">Senior Discounted</td>
-        
-        
-        <td class="border-2 border-black">Timestamp</td>
+  
     
-      
-       
-        
-    </tr>
-    @foreach ($salelist as $sales)
-    @csrf
-    <tr class="border-2 border-black text-center">
-        <td class="border-2 border-black">{{$sales['id']}}</td>
-        <td class="border-2 border-black">{{$sales['order_total']}}</td>
-        <td class="border-2 border-black">{{$sales['order_discount']}}</td>
-        <td class="border-2 border-black">{{$sales['order_senior_discount']}}</td>
-        <td class="border-2 border-black">{{$sales['created_at']}}</td>
-        </td>
-        
-    </tr>
-    @endforeach
-    
-    </table>
-    
-    
-    <div>
-   
-    </div>
     
 </section>
 </x-layout>
