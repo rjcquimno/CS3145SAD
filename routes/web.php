@@ -70,24 +70,26 @@ Route::get('inventory', [InventoryController::class, 'show']);
 Route::get('procurement', [InventoryController::class, 'show1']);
 
 
+// Show Employees
+Route::get('employee', [EmployeeController::class, 'show']);
+
 // Show Create Form
-Route::get('/createemployee', [EmployeeController::class, 'create']);
+Route::get('createemployee', [EmployeeController::class, 'create']);
 
 // Store Employee Data
-Route::post('/employee', [EmployeeController::class, 'store']);
+Route::post('employee', [EmployeeController::class, 'store']);
 
 // Show Edit Form
-Route::get('/editemployee/{employee}', [EmployeeController::class, 'edit']);
+Route::get('editemployee/{employee}', [EmployeeController::class, 'edit']);
 
-// Update Employee
-Route::put('/employee/{employee}', [EmployeeController::class, 'update']);
+//update employee
+Route::put('editemployee/{employee}', [EmployeeController::class, 'update']);
 
-// Delete Employee
-Route::delete('/employee/{employee}', [EmployeeController::class, 'destroy']);
+//delete employee
+Route::delete('employee/{employee}', [EmployeeController::class, 'destroy']);
 
-// Show Employees
-Route::get('/employee', [EmployeeController::class, 'show']);
-
+// Store Employee Data
+Route::get('employee/attendance', [EmployeeController::class, 'showAttendance']);
 
 // Show Register/Create Form
 Route::get('/register', [UserController::class, 'create']);
@@ -115,9 +117,10 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 //show salesorder
 Route::get('salesorder', [SalesOrderController::class, 'show']);
 
-//update inventory after successful salesorder. updateInventory will also run the function for storing the SalesOrder entry.
+//update inventory after successful salesorder. updateInventory will also run the function for storing the SalesOrder entry and entering the card/cash payment information.
 Route::put('salesorder', [salesOrderController::class, 'updateInventory']);
 
-
+//show saleshistory
+Route::get('saleshistory', [SalesOrderController::class, 'showHistory']);
 
 
