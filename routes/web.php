@@ -70,18 +70,23 @@ Route::get('inventory', [InventoryController::class, 'show']);
 Route::get('procurement', [InventoryController::class, 'show1']);
 
 
-// Show Employees
-Route::get('employee', [EmployeeController::class, 'show']);
-
 // Show Create Form
-Route::get('createemployee', [EmployeeController::class, 'create']);
+Route::get('/createemployee', [EmployeeController::class, 'create']);
 
 // Store Employee Data
-Route::post('employee', [EmployeeController::class, 'store']);
+Route::post('/employee', [EmployeeController::class, 'store']);
 
 // Show Edit Form
-Route::get('editemployee/{id}', [EmployeeController::class, 'edit']);
+Route::get('/editemployee/{employee}', [EmployeeController::class, 'edit']);
 
+// Update Employee
+Route::put('/employee/{employee}', [EmployeeController::class, 'update']);
+
+// Delete Employee
+Route::delete('/employee/{employee}', [EmployeeController::class, 'destroy']);
+
+// Show Employees
+Route::get('/employee', [EmployeeController::class, 'show']);
 
 
 // Show Register/Create Form
