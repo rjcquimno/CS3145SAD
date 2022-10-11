@@ -16,8 +16,19 @@ class EmployeeController extends Controller
     // }
 
     public function show(Employee $employeeData){
+        if (Employee::first()){
         $employeeData = Employee::first()->filter(request(['search']))->paginate(5);
         return view('employee', ['employeelist'=>$employeeData]);
+        }
+        else return view('createemployee');
+    }
+    
+    public function showAttendance(Employee $employeeData){
+        /*if (Employee::first()){
+        $employeeData = Employee::first()->filter(request(['search']))->paginate(5);
+        return view('employee', ['employeelist'=>$employeeData]);
+        }
+        else*/ return view('employeeattendance');
     }
 
     // //Show single employee
@@ -75,7 +86,8 @@ class EmployeeController extends Controller
 
         $employee->update($formFields);
 
-        return redirect('/employee')->with('message', 'Employee updated successfully!');
+        //return back()->with('message', 'Employee updated successfully!');
+        return redirect('/employee')->with('message', 'An employee was updated successfully.');
     }
 
     // Delete Listing
