@@ -10,8 +10,14 @@ class SupplierController extends Controller
 {
     // show supplier
     public function show(Supplier $supplierData){
+        if (Supplier::first()){
         $supplierData = Supplier::first()->filter(request(['search']))->get();
         return view('supplier', ['supplierlist'=>$supplierData]);
+        }
+        else{
+            return view('supplier', ['supplierlist'=>Supplier::first()]);
+        }
+        
         
     }
 

@@ -29,7 +29,7 @@ class SalesOrderController extends Controller
         $saleData = SalesOrder::select()->get();
         $cashData = cashpayment::select()->get();
         $cardData = cardpayment::select()->get();
-         return view('saleshistory', ['salelist'=>$saleData , 'cashlist'=>$cashData, 'cardlist'=>$cardData]);
+        return view('saleshistory', ['salelist'=>$saleData , 'cashlist'=>$cashData, 'cardlist'=>$cardData]);
     }
     
     //store item salesorder data
@@ -52,18 +52,31 @@ class SalesOrderController extends Controller
     }
     
     //update inventory when a sale is made
-     public function updateInventory(Request $request){
+     /*public function updateInventory(Request $request){
          $input = $request->all();
          $i = 0;
          $count = count($input['barcode']);
          while($i < $count){
-             
              Inventory::where('item_barcode',$input['barcode'][$i])->update(array('item_quantity'=>$input['oldquantity'][$i] - $input['quantity'][$i])); //search inventory for matching barcode, then update the quantity entry.
              $i++;
          }
          /*$count = $input['quantity'];
-         dd($count);*/
+         dd($count);
          $this->store($request);
+         
+        return redirect('/salesorder');
+    }*/
+    
+    public function updateInventory(Request $request){ //this version of updateInventory will go to InventoryLine instead of Inventory now
+         $input = $request->all();
+         $i = 0;
+         $count = count($input['idd']);
+         while($i < $count){
+             InventoryLine::where('inventory_id',$input['idd'][$i])->update(array(
+                 'inventoryline_quantity'=>$input['oldquantity'][$i] - $input['quantity'][$i])); //search inventory for matching barcode, then update the quantity entry.
+             $i++;
+         }
+         $this->store($request); //command to store SalesOrder data
          
         return redirect('/salesorder');
     }
