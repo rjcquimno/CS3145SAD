@@ -30,17 +30,7 @@
         </div>
     
         <div class="mb-6">
-            <label for="emp_address" class="inline-block text-lg mb-2">Time In</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full"
-                name="emp_address" value="{{old('emp_address')}}" placeholder="Davao City"/>
-    
-            @error('emp_address')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
-        </div>
-    
-        <div class="mb-6">
-            <label for="emp_email" class="inline-block text-lg mb-2">Time Out</label>
+            <label for="emp_email" class="inline-block text-lg mb-2">Password</label>
             <input type="text" class="border border-gray-200 rounded p-2 w-full"
                 name="emp_email" value="{{old('emp_email')}}" placeholder="test@gmail.com"/>
     
@@ -52,7 +42,7 @@
     
         <div class="mb-6">
             <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
-                Create Employee
+                Submit Time In/Out
             </button>
     
             <a href="/employee" class="text-black ml-4"> Back </a>

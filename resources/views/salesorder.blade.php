@@ -6,7 +6,6 @@
     </section>
 @include('partials._search')
 @livewireScripts
-<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Order</a>
 
 <br/>
 <br/>

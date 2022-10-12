@@ -51,14 +51,14 @@
     
         <div class="mb-6">
             <label
-                for="item_quantity"
+                for="inventoryline_quantity"
                 class="inline-block text-lg mb-2"
                 >Item Quantity</label
             >
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="item_quantity"
+                name="inventoryline_quantity"
                 placeholder="Example: 1,2,3,4,5"
                 value="{{old('item_quantity')}}"
             />
@@ -171,19 +171,60 @@
             @enderror
     
         </div>
+        
+        <div class="mb-6">
+            <label
+                for="inventoryline_outofstock"
+                class="inline-block text-lg mb-2"
+                >Out of Stock Value</label
+            >
+            <input
+                type="text"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="inventoryline_outofstock"
+                placeholder="Example: Remote, Boston MA, etc"
+                value="{{old('inventoryline_outofstock')}}"
+            />
+    
+            @error('inventoryline_outofstock')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+    
+        </div>
+        
+        <div class="mb-6">
+            <label
+                for="inventoryline_restockvalue"
+                class="inline-block text-lg mb-2"
+                >Restock Value</label
+            >
+            <input
+                type="text"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="inventoryline_restockvalue"
+                placeholder="Example: Remote, Boston MA, etc"
+                value="{{old('inventoryline_restockvalue')}}"
+            />
+    
+            @error('inventoryline_restockvalue')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+    
+        </div>
+        
 
         <div class="mb-6">
             <label
-                for="expire_date"
+                for="inventoryline_expirydate"
                 class="inline-block text-lg mb-2"
                 >Expire Date</label
             >
             <input
                 type="date"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="expire_date"
+                name="inventoryline_expirydate"
                 placeholder="Example: Remote, Boston MA, etc"
-                value="{{old('expire_date')}}"
+                value="{{old('inventoryline_expirydate')}}"
             />
     
             @error('expire_date')

@@ -5,6 +5,7 @@
     </section>
 @include('partials._search')
 <a href="/createsupplier" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">New Supplier</a>
+
 <br/>
 <br/>
 <br/>
@@ -23,8 +24,10 @@
         <td class="border-2 border-black">sup_email</td>
         <td class="border-2 border-black"></td>
         <td class="border-2 border-black"></td>
+        <td class="border-2 border-black"></td>
         
     </tr>
+    @if($supplierlist)
     @foreach ($supplierlist as $supplier)
     @csrf
     <tr class="border-2 border-black text-center">
@@ -35,6 +38,7 @@
         <td class="border-2 border-black">{{$supplier['sup_address']}}</td>
         <td class="border-2 border-black">{{$supplier['sup_phoneNum']}}</td>
         <td class="border-2 border-black">{{$supplier['sup_email']}}</td>
+        <td class="border-2 border-black"><a href="/createsupplier" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">New Supplier</a></td>
         <td class="border-2 border-black"><a href="/editsupplier/{{$supplier->id}}">
             <i class="fa-solid fa-pencil"></i>Edit
         </a></td>
@@ -49,7 +53,14 @@
         </td>
     </tr>
     @endforeach
-    
+    @else
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+    @endif
     </table>
 </section>
 </x-layout>

@@ -52,19 +52,19 @@
     
         <div class="mb-6">
             <label
-                for="item_quantity"
+                for="inventoryline_quantity"
                 class="inline-block text-lg mb-2"
                 >Item Quantity</label
             >
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="item_quantity"
+                name="inventoryline_quantity"
                 placeholder="Example: 1,2,3,4,5"
-                value="{{$inventory->item_quantity}}" 
+                value="{{$inventoryline->first()->inventoryline_quantity}}"
             />
     
-            @error('item_quantity')
+            @error('inventoryline_quantity')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
     
@@ -129,8 +129,26 @@
             @enderror
     
         </div>
-    
         
+        <div class="mb-6">
+            <label
+                for="item_discount"
+                class="inline-block text-lg mb-2"
+                >Price Discount</label
+            >
+            <input
+                type="text"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="item_discount"
+                placeholder="Example: 21.22,22.36"
+                value="{{$inventory->item_discount}}"
+            />
+    
+            @error('item_discount')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+    
+        </div>
     
         <div class="mb-6">
             <label
@@ -145,53 +163,72 @@
                 rows="10"
                 placeholder="Example: The apple is color red."
                 
-            >{{"$inventory->item_description"}}</textarea>
+            >{{$inventory->item_description}}</textarea>
     
             @error('item_description')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
     
         </div>
-
+    
         <div class="mb-6">
             <label
-                for="item_discount"
+                for="inventoryline_outofstock"
                 class="inline-block text-lg mb-2"
-                >Item Discount</label
+                >Out of Stock Value</label
             >
             <input
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="item_discount"
-                placeholder="Example: 10.51,7.97"
-                value="{{$inventory->item_discount}}"
+                name="inventoryline_outofstock"
+                placeholder="Example: 0"
+                value="{{$inventoryline->first()->inventoryline_outofstock}}"
             />
     
-            @error('item_discount')
+            @error('inventoryline_outofstock')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
     
         </div>
+        
+        <div class="mb-6">
+            <label
+                for="inventoryline_restockvalue"
+                class="inline-block text-lg mb-2"
+                >Restock Value</label
+            >
+            <input
+                type="text"
+                class="border border-gray-200 rounded p-2 w-full"
+                name="inventoryline_restockvalue"
+                placeholder="Example: 10"
+                value="{{$inventoryline->first()->inventoryline_restockvalue}}"
+            />
+    
+            @error('inventoryline_restockvalue')
+            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+            @enderror
+    
+        </div>
+        
 
         <div class="mb-6">
             <label
-                for="expire_date"
+                for="inventoryline_expirydate"
                 class="inline-block text-lg mb-2"
                 >Expire Date</label
             >
             <input
                 type="date"
                 class="border border-gray-200 rounded p-2 w-full"
-                name="expire_date"
+                name="inventoryline_expirydate"
                 placeholder="Example: Remote, Boston MA, etc"
-                value="{{$inventory->expire_date}}" 
+                value="{{old('inventoryline_expirydate')}}"
             />
     
-            @error('expire_date')
+            @error('inventoryline_expirydate')
             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
-    
-        </div>
     
         <div class="mb-6">
             <button

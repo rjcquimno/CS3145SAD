@@ -3,7 +3,8 @@
     
         <input type="hidden" name="oldquantity[]" value="{{$oldquantity}}" class="text-center" readonly>
         <input type="hidden" name="barcode[]" value="{{$barcode}}" class="text-center" readonly>
-         <input type="hidden" name="discount[]" value="{{$discount}}" class="text-center" readonly>
+        <input type="hidden" name="idd[]" value="{{$idd}}" class="text-center" readonly>
+        <input type="hidden" name="discount[]" value="{{$discount}}" class="text-center" readonly>
         <td class="border-2 border-black">{{$barcode}}</td>
         <td class="border-2 border-black">{{$name}}</td>
         <td class="border-2 border-black"> <input wire:model="quantity" wire:change="quantchange" type="text" name="quantity[]"></td>
