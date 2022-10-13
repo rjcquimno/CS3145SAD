@@ -69,16 +69,16 @@
                 
             </td>
         </tr>
+        <div $lass="mt-1 p-4">
+            {{$inventorylist->links()}}
+        </div>
         @endforeach
     @else
             <tr class="border-2 border-black text-center">
             <td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td>
     @endif
     </table>
-
-    <div class="mt-1 p-4">
-        {{$inventorylist->links()}}
-    </div>
+    
 
 </section>
 </x-layout>

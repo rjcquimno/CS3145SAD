@@ -53,6 +53,9 @@
 
         </td>
     </tr>
+    <div class="mt-1 p-4">
+        {{$supplierlist->links()}}
+    </div>
     @endforeach
     @else
         <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
@@ -64,9 +67,7 @@
     @endif
     </table>
 
-    <div class="mt-1 p-4">
-        {{$supplierlist->links()}}
-    </div>
+    
 
 </section>
 </x-layout>
