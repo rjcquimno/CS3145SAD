@@ -18,8 +18,6 @@ class InventoryController extends Controller
        
         $inventoryLineData = InventoryLine::first()->filter(request(['search']))->get();
 
-        $inventoryData = Inventory::paginate(5);
-        
         return view('inventory', ['inventorylist'=>$inventoryData, 'inventorylinelist' =>$inventoryLineData]);
         }
        else return view('inventory', ['inventorylist'=>Inventory::first(), 'inventorylinelist' => InventoryLine::first()]);

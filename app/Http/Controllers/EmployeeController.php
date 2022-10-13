@@ -16,6 +16,7 @@ class EmployeeController extends Controller
     // }
 
     public function show(Employee $employeeData){
+
         if (Employee::first()){
         $employeeData = Employee::first()->filter(request(['search']))->paginate(5);
         return view('employee', ['employeelist'=>$employeeData]);

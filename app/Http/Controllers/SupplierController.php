@@ -13,7 +13,7 @@ class SupplierController extends Controller
         if (Supplier::first()){
         $supplierData = Supplier::first()->filter(request(['search']))->get();
 
-        $supplierData = Supplier::paginate(5);
+        $supplierData = Supplier::first()->filter(request(['search']))->paginate(5);
 
         return view('supplier', ['supplierlist'=>$supplierData]);
         }
