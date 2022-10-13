@@ -12,16 +12,17 @@
 <br/>
 <br/>
 <br/>
+
 <section class="flex flex-col justify-center align-center text-center space-y-4 mb-4 ">
     <table class="table-auto m-0">
         <tr class="font-bold text-center">
         
-        <td class="border-2 border-black">id</td>
-        <td class="border-2 border-black">sup_name</td>
-        <td class="border-2 border-black">sup_contactPerson</td>
-        <td class="border-2 border-black">sup_address</td>
-        <td class="border-2 border-black">sup_phoneNumber</td>
-        <td class="border-2 border-black">sup_email</td>
+        <td class="border-2 border-black">ID</td>
+        <td class="border-2 border-black">Supplier Name</td>
+        <td class="border-2 border-black">Contact Person</td>
+        <td class="border-2 border-black">Address</td>
+        <td class="border-2 border-black">Phone Number</td>
+        <td class="border-2 border-black">Email</td>
         <td class="border-2 border-black"></td>
         <td class="border-2 border-black"></td>
         <td class="border-2 border-black"></td>
@@ -62,5 +63,10 @@
         <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
     @endif
     </table>
+
+    <div class="mt-1 p-4">
+        {{$supplierlist->links()}}
+    </div>
+
 </section>
 </x-layout>

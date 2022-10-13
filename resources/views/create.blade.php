@@ -182,7 +182,7 @@
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="inventoryline_outofstock"
-                placeholder="Example: Remote, Boston MA, etc"
+                placeholder="Example: 1,2,3,4,5"
                 value="{{old('inventoryline_outofstock')}}"
             />
     
@@ -202,7 +202,7 @@
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="inventoryline_restockvalue"
-                placeholder="Example: Remote, Boston MA, etc"
+                placeholder="Example: 1,2,3,4,5"
                 value="{{old('inventoryline_restockvalue')}}"
             />
     

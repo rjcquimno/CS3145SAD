@@ -2,7 +2,7 @@
 <x-layout>
 
     <section class="relative h-20 flex flex-col justify-center align-center text-center space-y-4 mb-4 text-xl">
-<h1 class="text-lg font-bold align-center">Inventory</h1>
+<h1 class="text-lg font-bold align-center">Cashier</h1>
     </section>
 @include('partials._search')
 @livewireScripts

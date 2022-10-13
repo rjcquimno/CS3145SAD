@@ -1,8 +1,15 @@
 <x-layout>
     <section class="relative h-20 flex flex-col justify-center align-center text-center space-y-4 mb-4 text-xl">
-<h1 class="text-lg font-bold align-center">Employee Management System</h1>
+<h1 class="text-lg font-bold align-center">Employee Management</h1>
     </section>
 @include('partials._search')
+
+<a href="/createemployee" class="absolute top-1/5 left-10 bg-black text-white py-2 px-5">Add employee</a>
+<a href="/employee/attendance" class="absolute top-1/5 right-10 bg-black text-white py-2 px-5">Attendance</a>
+
+<br/>
+
+
 <section class="flex flex-col justify-center align-center text-center space-y-4 mb-4 ">
     <table class="table-auto m-8">
         <tr class="font-bold text-center">
@@ -22,7 +29,7 @@
     @foreach ($employeelist as $employee)
     @csrf
     <tr class="border-2 border-black text-center">
-        <th>{{$loop->index+1}}</th>
+        <td class="border-2 border-black">{{$employee['id']}}</td>
         <td class="border-2 border-black">{{$employee['emp_fullName']}}</td>
         <td class="border-2 border-black">{{$employee['emp_phoneNum']}}</td>
         <td class="border-2 border-black">{{$employee['emp_address']}}</td>
@@ -42,8 +49,13 @@
         </td>
     </tr>
     @endforeach
-    </table><br>
-    <a href="/createemployee" class="absolute bottom-1/3 left-10 bg-black text-white py-2 px-5">Add employee</a>
-    <a href="/employee/attendance" class="absolute bottom-1/3 right-10 bg-black text-white py-2 px-5">Attendance</a>
+    </table>
+    
+    <div class="mt-1 p-4">
+        {{$employeelist->links()}}
+    </div>
+
+
+
 </section>
 </x-layout>

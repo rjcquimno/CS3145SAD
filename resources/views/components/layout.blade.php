@@ -37,6 +37,7 @@
                         >Home</a
                     >
                 </li>
+                @auth
                 <li>
                     <a href="/salesorder" class="hover:text-laravel"
                         >Cashier</a
@@ -44,7 +45,7 @@
                 </li>
                 <li>
                     <a href="/saleshistory" class="hover:text-laravel"
-                        >Manager</a
+                        >Sales</a
                     >
                 </li>
                 <li>
@@ -67,17 +68,37 @@
                         > Employee</a
                     >
                 </li>
+                @endauth
+                @auth
                 <li>
-                    <a href="register.html" class="hover:text-laravel"
+                    <i class="fa-solid fa-gear"></i>
+                    <span class="font-bold">
+                    {{auth()->user()->name}}
+                    </span>
+                </li>
+
+                <li>
+                    <form class="inline" method="POST" action="/logout">
+                    @csrf
+                    <button type="submit">
+                       <i class="fa-solid fa-door-closed"></i>Log Out
+                    </button>
+                    </form>
+                </li>
+
+                @else
+                <li>
+                    <a href="register" class="hover:text-laravel"
                         ><i class="fa-solid fa-user-plus"></i> Register</a
                     >
                 </li>
                 <li>
-                    <a href="login.html" class="hover:text-laravel"
+                    <a href="login" class="hover:text-laravel"
                         ><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login</a
                     >
                 </li>
+                @endauth
             </ul>
         </nav>
 

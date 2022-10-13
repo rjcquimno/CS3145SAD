@@ -79,7 +79,7 @@
                 type="text"
                 class="border border-gray-200 rounded p-2 w-full"
                 name="sup_phoneNum"
-                placeholder="Example: Small,Medium,Large"
+                placeholder="09126459067"
                 value="{{old('sup_phoneNum')}}"
             />
     
