@@ -2,11 +2,11 @@
 <x-layout>
 
     <section class="relative h-20 flex flex-col justify-center align-center text-center space-y-4 mb-4 text-xl">
-<h1 class="text-lg font-bold align-center">Sales</h1>
+<h1 class="text-5xl font-bold align-center">Sales</h1>
     </section>
 @include('partials._search')
 @livewireScripts
-<a href="/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">Order</a>
+<a href="/create" class="absolute top-1/3 right-10 bg-zinc-600 rounded-lg text-white py-2 px-5">Order</a>
 
 <br/>
 <br/>
@@ -14,7 +14,8 @@
 <br/>
 <br/>
 <br/>
-<section class="flex flex-col justify-center align-center text-center space-y-4 mb-4">
+
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
        <table class="table-auto w-25 overflow-y-scroll h-32">
         <tr class="font-bold text-center">
             <td class="border-2 border-black">ID</td>
@@ -35,7 +36,13 @@
         </tr>
     @endforeach
     </table>
-    
+</div>
+
+<br/>
+<br/>
+
+
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
     <table class="table-auto w-25 overflow-y-scroll h-32">
         <tr class="font-bold text-center">
             <td class="border-2 border-black">Order ID</td>
@@ -54,7 +61,12 @@
         </tr>
     @endforeach
     </table>
-    
+</div>
+
+<br/>
+<br/>
+
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
      <table class="table-auto w-25 overflow-y-scroll h-32">
         <tr class="font-bold text-center">
             <td class="border-2 border-black">Order ID</td>
@@ -77,6 +89,6 @@
         </tr>
     @endforeach
     </table>
-    
+</div>
 </section>
 </x-layout>

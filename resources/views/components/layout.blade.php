@@ -28,47 +28,10 @@
         <title>Uptown Corporate Hotel</title>
     </head>
     <body class="mb-48">
-        <nav class="flex justify-between items-center mb-4">
-            <a href="/"
-                ><h1 class="flex space-x-6 mr-6 text-lg font-bold">UptownCorporateHotel</h1></a>
+        <nav class="flex justify-between items-center mb-4 h-12">
+            <a href="/" class="hover:text-laravel"
+                ><h1 class="flex space-x-6 mr-6 text-lg font-bold ">UptownCorporateHotel</h1></a>
             <ul class="flex space-x-6 mr-6 text-lg">
-                <li>
-                    <a href="/" class="hover:text-laravel"
-                        >Home</a
-                    >
-                </li>
-                @auth
-                <li>
-                    <a href="/salesorder" class="hover:text-laravel"
-                        >Cashier</a
-                    >
-                </li>
-                <li>
-                    <a href="/saleshistory" class="hover:text-laravel"
-                        >Sales</a
-                    >
-                </li>
-                <li>
-                    <a href="/inventory" class="hover:text-laravel"
-                        > Inventory</a
-                    >
-                </li>
-                <li>
-                    <a href="/procurement" class="hover:text-laravel"
-                        > Procurement</a
-                    >
-                </li>
-                <li>
-                    <a href="/supplier" class="hover:text-laravel"
-                        > Supplier</a
-                    >
-                </li>
-                <li>
-                    <a href="/employee" class="hover:text-laravel"
-                        > Employee</a
-                    >
-                </li>
-                @endauth
                 @auth
                 <li>
                     <i class="fa-solid fa-gear"></i>
@@ -80,7 +43,7 @@
                 <li>
                     <form class="inline" method="POST" action="/logout">
                     @csrf
-                    <button type="submit">
+                    <button type="submit" class="hover:text-laravel">
                        <i class="fa-solid fa-door-closed"></i>Log Out
                     </button>
                     </form>

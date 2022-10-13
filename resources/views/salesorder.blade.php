@@ -2,7 +2,7 @@
 <x-layout>
 
     <section class="relative h-20 flex flex-col justify-center align-center text-center space-y-4 mb-4 text-xl">
-<h1 class="text-lg font-bold align-center">Cashier</h1>
+<h1 class="text-5xl font-bold align-center">Cashier</h1>
     </section>
 @include('partials._search')
 @livewireScripts
@@ -19,6 +19,8 @@
         @csrf
         @method('PUT')
     <livewire:seniorbutton/>
+
+    <div class="flex flex-col justify-center align-center text-center px-1 mx-4">
      <table class="table-auto m-10">
         <tr class="font-bold text-center">
         <td class="border-2 border-black">item_barcode</td>
@@ -74,10 +76,10 @@
     </table>
     </form>
     
+</div>
     
     
-    
-    
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
     <table class="table-auto m-10  w-25">
         <tr class="font-bold text-center">
         
@@ -121,7 +123,7 @@
     @endforeach
     
     </table>
-    
+</div>
   
     
     

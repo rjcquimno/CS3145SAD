@@ -1,15 +1,16 @@
 <x-layout>
 
     <section class="relative h-20 flex flex-col justify-center align-center text-center space-y-4 mb-4 text-xl">
-<h1 class="text-lg font-bold align-center">Inventory</h1>
+<h1 class="text-5xl font-bold align-center">Inventory</h1>
     </section>
 @include('partials._search')
-<a href="/create" class="absolute top-1/5 right-10 bg-black text-white py-2 px-5">Stock in</a>
+<a href="/create" class="absolute top-1/5 right-10 bg-zinc-600 rounded-lg text-white py-2 px-5">Stock in</a>
 
 <br/>
 <br/>
-
-<section class="flex flex-col justify-center align-center text-center space-y-4 mb-4 ">
+<div style="height:500px;overflow:auto;">
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
+    
     <table class="table-auto m-0">
         <tr class="font-bold text-center">
         
@@ -49,7 +50,7 @@
                         <td class="border-2 border-black">{{$inventoryline['inventoryline_expirydate']}}</td>
                         
                         <td class="border-2 border-black">
-                            <a href="/edit/{{$inventory->id}}">
+                            <a class="hover:text-laravel" href="/edit/{{$inventory->id}}">
                             <i class="fa-solid fa-pencil"></i>Edit
                             </a>
                         </td>
@@ -57,7 +58,7 @@
                         <td class="border-2 border-black"><button class="text-red-500">
                         <form method="Post" action="/inventory/{{$inventory->id}}">
                              <input type="hidden" name="inventoryline" value="{{$inventory->id}}" class="text-center" readonly>
-                            <button class="text-red-500"><i class="fa-solid fa-trash"></i>Delete</button>
+                            <button class="text-red-500 hover:text-black"><i class="fa-solid fa-trash"></i>Delete</button>
                         </form>
                    
                     @else
@@ -69,16 +70,18 @@
                 
             </td>
         </tr>
-        <div $lass="mt-1 p-4">
-            {{$inventorylist->links()}}
-        </div>
+        
         @endforeach
+        
     @else
             <tr class="border-2 border-black text-center">
             <td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td><td class="border-2 border-black">INVENTORY IS EMPTY</td>
     @endif
     </table>
-    
 
-</section>
+    <br/>
+
+    </div>
+</div>
+
 </x-layout>
