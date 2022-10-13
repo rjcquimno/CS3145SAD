@@ -13,93 +13,96 @@
 <br/>
 <br/>
 <br/>
-<section class="flex flex-col justify-center align-center text-center space-y-4 mb-4">
+<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
      <form method="POST" action="/salesorder" enctype="multipart/form-data">
         
         @csrf
         @method('PUT')
     <livewire:seniorbutton/>
 
-    <div class="flex flex-col justify-center align-center text-center px-1 mx-4">
+    <div class="mb-6">
+        <label
+            for="item_price"
+            class="inline-block text-lg mb-2"
+            >Card Type</label
+        >
+        <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardnumber" placeholder="Example: Visa, MasterCard"       />
+        <label
+            for="item_price"
+            class="inline-block text-lg mb-2"
+            >Card Number</label
+        >
+        <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardtype" placeholder="Example: 1234-5678-9012-3456"       />
+        <label
+            for="item_price"
+            class="inline-block text-lg mb-2"
+            >Price</label
+        >
+        <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="amount_paid" placeholder="Example: 21.22,22.36"       />
+
+        @error('item_price')
+        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+        @enderror
+
+        <button
+            class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+        >
+            Submit Payment
+        </button>
+    </div> 
+
+    <div style="display: flex; gap: 10em; justify-content: space-between;">
+        <div class="col">
+        </div>
+    <div class="col">
+
      <table class="table-auto m-10">
         <tr class="font-bold text-center">
-        <td class="border-2 border-black">item_barcode</td>
-        <td class="border-2 border-black">item_name</td>
-        <td class="border-2 border-black">item_quantity</td>
-        <td class="border-2 border-black">item_discount</td>
-        <td class="border-2 border-black">item_price</td>
+        <td class="border-2 border-black">Barcode</td>
+        <td class="border-2 border-black">Name</td>
+        <td class="border-2 border-black">Quantity</td>
+        <td class="border-2 border-black">Discount</td>
+        <td class="border-2 border-black">Price</td>
         
-    </tr>
+        </tr>
     
-    @foreach ($inventorylist as $inventory)
-    @csrf
-    <livewire:addtocarttable :barcode="$inventory['item_barcode']" :oldquantity="$inventory['item_quantity']" :name="$inventory['item_name']" :price="$inventory['item_price']" :discount="$inventory['item_discount']" :wire:key="$inventory['item_barcode']"/>
-    @endforeach
-    <livewire:ordertotal/>
-    <livewire:taxtotal/>
-    <livewire:seniortotal/>
-    <livewire:grandtotal/>
+        @foreach ($inventorylist as $inventory)
+        @csrf
+        <livewire:addtocarttable :barcode="$inventory['item_barcode']" :oldquantity="$inventory['item_quantity']" :name="$inventory['item_name']" :price="$inventory['item_price']" :discount="$inventory['item_discount']" :wire:key="$inventory['item_barcode']"/>
+        @endforeach
+        <livewire:ordertotal/>
+        <livewire:taxtotal/>
+        <livewire:seniortotal/>
+        <livewire:grandtotal/>
+    
+        </table>
+        </form>
+    
+        </div>
 
-    <tr>
-        <div class="mb-6">
-            <label
-                for="item_price"
-                class="inline-block text-lg mb-2"
-                >Card Type</label
-            >
-            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardnumber" placeholder="Example: Visa, MasterCard"       />
-            <label
-                for="item_price"
-                class="inline-block text-lg mb-2"
-                >Card Number</label
-            >
-            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="cardtype" placeholder="Example: 1234-5678-9012-3456"       />
-            <label
-                for="item_price"
-                class="inline-block text-lg mb-2"
-                >Price</label
-            >
-            <input type="text" class="border border-gray-200 rounded p-2 w-auto" name="amount_paid" placeholder="Example: 21.22,22.36"       />
-    
-            @error('item_price')
-            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-            @enderror
-    
-            <button
-                class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
-            >
-                Submit Payment
-            </button>
-        </div> 
-    </tr>
-    
-    </table>
-    </form>
-    
-</div>
-    
-    
-<div class="flex flex-col justify-center align-center text-center px-1 mx-4">
-    <table class="table-auto m-10  w-25">
+        <div class="col">
+            
+
+        <table class="table-auto m-10  w-25">
         <tr class="font-bold text-center">
         
         
-        <td class="border-2 border-black">item_barcode</td>
-        <td class="border-2 border-black">item_name</td>
-        <td class="border-2 border-black">item_quantity</td>
+        <td class="border-2 border-black">Barcode</td>
+        <td class="border-2 border-black">Name</td>
+        <td class="border-2 border-black">Quantity</td>
         
-        <td class="border-2 border-black">item_price</td>
+        <td class="border-2 border-black">Price</td>
         
         
-        <td class="border-2 border-black">item_discount</td>
-        <td class="border-2 border-black">expire_date</td>
+        <td class="border-2 border-black">Discount</td>
+        <td class="border-2 border-black">Expire Date</td>
       
        
         
-    </tr>
-    @foreach ($inventorylist as $inventory)
-    @csrf
-    <tr class="border-2 border-black text-center">
+        </tr>
+        @foreach ($inventorylist as $inventory)
+        @csrf
+        <tr class="border-2 border-black text-center">
         
         
         <td class="border-2 border-black">{{$inventory['item_barcode']}}</td>
@@ -119,12 +122,17 @@
     
         </td>
         
-    </tr>
-    @endforeach
+            </tr>
+            @endforeach
     
-    </table>
+        </table>
+        </div>
+        <div class="col">
+        </div>
+    </div>
 </div>
-  
+
+
     
     
 </section>
