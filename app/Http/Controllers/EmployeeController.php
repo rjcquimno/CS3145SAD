@@ -46,10 +46,10 @@ class EmployeeController extends Controller
     // Store Employee Data
     public function store(Request $request) {
         $formFields = $request->validate([
-            'emp_fullName' =>'required', 
-            'emp_phoneNum' => 'required|numeric|digits:11',
+            'emp_fullName' =>['required',Rule::unique('employees', 'emp_fullName')], 
+            'emp_phoneNum' => 'required|numeric|digits:11|unique:employees,emp_phoneNum,$id',
             'emp_address' => 'required',
-            'emp_email' => ['required', 'email'],
+            'emp_email' => ['required', 'email',Rule::unique('employees', 'emp_email')],
             'emp_gender' => 'required',
             'emp_birthdate' => 'required',
             'emp_role' => 'required',

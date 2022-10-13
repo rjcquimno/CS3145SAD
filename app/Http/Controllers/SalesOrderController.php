@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SalesOrder;
-use App\Models\cashpayment;
-use App\Models\cardpayment;
 use App\Models\Inventory;
+use App\Models\SalesOrder;
+use App\Models\cardpayment;
+use App\Models\cashpayment;
 
 use Illuminate\Http\Request;
+use App\Models\InventoryLine;
+use App\Models\ordercontents;
 use Illuminate\Validation\Rule;
 
 

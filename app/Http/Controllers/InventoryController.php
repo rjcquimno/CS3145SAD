@@ -17,15 +17,26 @@ class InventoryController extends Controller
         $inventoryData = Inventory::first()->filter(request(['search']))->get();
        
         $inventoryLineData = InventoryLine::first()->filter(request(['search']))->get();
+
+        $inventoryData = Inventory::paginate(5);
+        
         return view('inventory', ['inventorylist'=>$inventoryData, 'inventorylinelist' =>$inventoryLineData]);
         }
        else return view('inventory', ['inventorylist'=>Inventory::first(), 'inventorylinelist' => InventoryLine::first()]);
+
+       
     }
 
     // show procurement
     public function show1(Inventory $inventoryData){
-        $inventoryData = Inventory::first()->filter(request(['search']))->get();
-        return view('procurement', ['inventorylist'=>$inventoryData]);
+
+        if (Inventory::first() && InventoryLine::first()){
+            $inventoryData = Inventory::first()->filter(request(['search']))->get();
+           
+            $inventoryLineData = InventoryLine::first()->filter(request(['search']))->get();
+            return view('procurement', ['inventorylist'=>$inventoryData, 'inventorylinelist' =>$inventoryLineData]);
+            }
+           else return view('procurement', ['inventorylist'=>Inventory::first(), 'inventorylinelist' => InventoryLine::first()]);
         
     }
 

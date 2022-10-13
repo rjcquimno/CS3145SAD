@@ -12,6 +12,9 @@ class SupplierController extends Controller
     public function show(Supplier $supplierData){
         if (Supplier::first()){
         $supplierData = Supplier::first()->filter(request(['search']))->get();
+
+        $supplierData = Supplier::paginate(5);
+
         return view('supplier', ['supplierlist'=>$supplierData]);
         }
         else{
@@ -28,11 +31,11 @@ class SupplierController extends Controller
 
     public function store(Request $request){
         $formFields = $request->validate([
-            'sup_name' =>'required', 
+            'sup_name' =>['required',Rule::unique('suppliers', 'sup_name')], 
             'sup_contactPerson' => 'required',
             'sup_address' => 'required',
-            'sup_phoneNum' => 'required|numeric|digits:11',
-            'sup_email' => ['required', 'email'],
+            'sup_phoneNum' => 'required|numeric|digits:11|unique:suppliers,sup_phoneNum,$id',
+            'sup_email' => ['required', 'email',Rule::unique('suppliers', 'sup_email')],
         ]);
 
         Supplier::create($formFields);

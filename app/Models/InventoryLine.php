@@ -14,8 +14,7 @@ class InventoryLine extends Model
     public function scopeFilter($query, array $filters){
         if($filters['search'] ?? false) {
             $query->where('inventory_id','like', '%'. request('search').'%')
-            ->orWhere('inventoryline_id','like', '%'. request('search').'%')
-            ->orWhere('item_name','like', '%'. request('search').'%');
+            ->orWhere('inventoryline_id','like', '%'. request('search').'%');
             
         }
     }
