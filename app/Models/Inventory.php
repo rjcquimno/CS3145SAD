@@ -15,7 +15,8 @@ class Inventory extends Model
         if($filters['search'] ?? false) {
             $query->where('id','like', '%'. request('search').'%')
             ->orWhere('item_barcode','like', '%'. request('search').'%')
-            ->orWhere('item_name','like', '%'. request('search').'%');
+            ->orWhere('item_name','like', '%'. request('search').'%')
+            ->orWhere('item_size','like', '%'. request('search').'%');
             
         }
     }

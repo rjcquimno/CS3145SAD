@@ -61,6 +61,9 @@ class InventoryController extends Controller
         $itemid = $inventoryNew->id;
     
         $formFields = $request->validate([
+            'item_barcode' =>'required', 
+            'item_name' => 'required',
+            'item_size' => 'required',
             'inventoryline_quantity' => 'required|integer',
             'inventoryline_restockvalue' => 'required|integer',
             'inventoryline_outofstock' => 'required|integer',
@@ -94,6 +97,9 @@ class InventoryController extends Controller
             'item_discount' => 'required|regex:/^\d+(\.\d{1,2})?$/',
         ]);
         $formFields2 = $request->validate([
+            'item_barcode' =>'required', 
+            'item_name' => 'required',
+            'item_size' => 'required',
             'inventoryline_quantity' => 'required|integer',
             'inventoryline_restockvalue' => 'required|integer',
             'inventoryline_outofstock' => 'required|integer',
