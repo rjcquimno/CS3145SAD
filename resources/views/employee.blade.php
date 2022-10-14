@@ -4,7 +4,7 @@
     </section>
 @include('partials._search')
 
-<a href="/createemployee" class="absolute top-1/5 left-10 bg-zinc-600 rounded-lg text-white py-2 px-5">Add employee</a>
+<a href="/createemployee" class="absolute top-1/5 right-10 bg-zinc-600 rounded-lg text-white py-2 px-5">Add employee</a>
 
 
 <br/>
