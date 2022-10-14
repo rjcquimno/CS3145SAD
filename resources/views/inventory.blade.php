@@ -86,7 +86,8 @@
             <td class="border-2 border-black">EMPTY</td>
             <td class="border-2 border-black">EMPTY</td>
             <td class="border-2 border-black">EMPTY</td>
-  
+            <td class="border-2 border-black">EMPTY</td>
+            <td class="border-2 border-black">EMPTY</td>
             <td class="border-2 border-black">EMPTY</td>
             <td class="border-2 border-black">EMPTY</td>
             <td class="border-2 border-black">EMPTY</td>
