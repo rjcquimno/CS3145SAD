@@ -135,7 +135,7 @@
     </div>
 </div>
 @else
-<p> The inventory is empty. No sales can be made. </p>
+<p class="text-center"> The inventory is empty. No sales can be made. </p>
 @endif
 
     
