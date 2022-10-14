@@ -17,8 +17,9 @@
 <div class="flex flex-col justify-center align-center text-center px-1 mx-4">
     <div style="display: flex; justify-content: space-between;">
       
-    <div class="col">
-       <table class="table-auto overflow-y-scroll h-32">
+    <div class="col px-2">
+    <br>
+       <table class="table-auto overflow-y-scroll">
         <tr class="font-bold text-center">
             <td class="border-2 border-black">ID</td>
             <td class="border-2 border-black">Order Total</td>
@@ -74,7 +75,7 @@
 
     <div class="col">
         Order Contents
-       <table class="table-auto overflow-y-scroll h-32">
+       <table class="table-auto overflow-y-scroll">
         <tr class="font-bold text-center">
             <td class="border-2 border-black">Order ID</td>
             <td class="border-2 border-black">Item Name</td>
