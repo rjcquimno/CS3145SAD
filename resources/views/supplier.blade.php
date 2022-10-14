@@ -54,12 +54,16 @@
     @endforeach
 
     @else
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
-        <td class="border-2 border-black">NO SUPPLIERS LISTED</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        <td class="border-2 border-black">EMPTY</td>
+        
     @endif
     </table>
 
