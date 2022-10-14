@@ -7,13 +7,6 @@
 @include('partials._search')
 @livewireScripts
 
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
 <div class="flex flex-col justify-center align-center text-center px-1 mx-4">
     <div style="display: flex; justify-content: space-between;">
       
