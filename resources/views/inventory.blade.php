@@ -26,9 +26,10 @@
         <td class="border-2 border-black">Item Restock Value</td>
         <td class="border-2 border-black">Item Out of Stock Value</td>
         <td class="border-2 border-black">Expiry Date</td>
+        @if($inventorylist && $inventorylinelist)
         <td class="border-2 border-black"></td>
         <td class="border-2 border-black"></td>
-        
+        @endif
     </tr>
     @if($inventorylist && $inventorylinelist)
         @foreach($inventorylist as $inventory) 
@@ -44,7 +45,11 @@
                         <td class="border-2 border-black">{{$inventory['item_price']}}</td>
                         <td class="border-2 border-black">{{$inventory['item_procprice']}}</td>
                         <td class="border-2 border-black">{{$inventory['item_discount']}}</td>
+                        @if((int)$inventoryline['inventoryline_restockvalue'] >= (int)$inventoryline['inventoryline_quantity'])
+                        <td class="border-2 border-black"><p class="text-red-500 text-opacity-75" > {{$inventoryline['inventoryline_quantity']}}</p></td>
+                        @else
                         <td class="border-2 border-black">{{$inventoryline['inventoryline_quantity']}}</td>
+                        @endif
                         <td class="border-2 border-black">{{$inventoryline['inventoryline_restockvalue']}}</td>
                         <td class="border-2 border-black">{{$inventoryline['inventoryline_outofstock']}}</td>
                         <td class="border-2 border-black">{{$inventoryline['inventoryline_expirydate']}}</td>

@@ -36,7 +36,7 @@
         <td class="border-2 border-black">{{$supplier['sup_address']}}</td>
         <td class="border-2 border-black">{{$supplier['sup_phoneNum']}}</td>
         <td class="border-2 border-black">{{$supplier['sup_email']}}</td>
-        <td class="border-2 border-black"><a href="/createsupplier" class="text-blue-700 hover:text-stone-700 py-1 px-3"><i class="fa-solid fas fa-shipping-fast"></i>Purchase Order</a></td>
+        <td class="border-2 border-black"><a href="/purchaseorder/{{$supplier->id}}" class="text-blue-700 hover:text-stone-700 py-1 px-3"><i class="fa-solid fas fa-shipping-fast"></i>Purchase Order</a></td>
         <td class="border-2 border-black"><a class="hover:text-laravel" href="/editsupplier/{{$supplier->id}}">
             <i class="fa-solid fa-pencil"></i>Edit
         </a></td>

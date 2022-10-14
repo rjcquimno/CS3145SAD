@@ -8,14 +8,12 @@
 @livewireScripts
 
 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+
+@if($inventorylist && $inventorylinelist)
 <div class="flex flex-col justify-center align-center text-center px-1 mx-4">
+    
      <form method="POST" action="/salesorder" enctype="multipart/form-data">
-        
+        <input type="hidden" class="border border-gray-200 rounded p-2 w-full" name="date_today" value="{{Carbon\Carbon::now()->toDateString();}}" readonly/>
         @csrf
         @method('PUT')
     <livewire:seniorbutton/>
@@ -51,9 +49,7 @@
         </button>
     </div> 
 
-    <div style="display: flex; gap: 10em; justify-content: space-between;">
-        <div class="col">
-        </div>
+    <div style="display: flex; gap: 7em; justify-content: space-x-0;">
     <div class="col">
 
      <table class="table-auto m-10">
@@ -68,7 +64,12 @@
     
         @foreach ($inventorylist as $inventory)
         @csrf
-        <livewire:addtocarttable :barcode="$inventory['item_barcode']" :oldquantity="$inventory['item_quantity']" :name="$inventory['item_name']" :price="$inventory['item_price']" :discount="$inventory['item_discount']" :wire:key="$inventory['item_barcode']"/>
+        @foreach($inventorylinelist as $inventoryline) 
+        @csrf
+        @if($inventory['id']==$inventoryline['inventory_id'])
+        <livewire:addtocarttable :barcode="$inventory['item_barcode']" :oldquantity="$inventoryline['inventoryline_quantity']" :name="$inventory['item_name']" :price="$inventory['item_price']" :discount="$inventory['item_discount']" :idd="$inventory['id']" :wire:key="$inventory['item_barcode']"/>
+        @endif
+        @endforeach
         @endforeach
         <livewire:ordertotal/>
         <livewire:taxtotal/>
@@ -102,19 +103,23 @@
         </tr>
         @foreach ($inventorylist as $inventory)
         @csrf
+            @foreach($inventorylinelist as $inventoryline) 
+                    @csrf
+                    @if($inventory['id']==$inventoryline['inventory_id'])
         <tr class="border-2 border-black text-center">
         
         
         <td class="border-2 border-black">{{$inventory['item_barcode']}}</td>
         <td class="border-2 border-black">{{$inventory['item_name']}}</td>
-        <td class="border-2 border-black">{{$inventory['item_quantity']}}</td>
+        <td class="border-2 border-black">{{$inventoryline['inventoryline_quantity']}}</td>
         
         <td class="border-2 border-black">{{$inventory['item_price']}}</td>
         
         
         <td class="border-2 border-black">{{$inventory['item_discount']}}</td>
-        <td class="border-2 border-black">{{$inventory['expire_date']}}</td>
-
+        <td class="border-2 border-black">{{$inventoryline['inventoryline_expirydate']}}</td>
+        <td class="border-2 border-black">
+           
             <livewire:addtocart :itemId="$inventory['item_barcode']" />
             
         
@@ -122,15 +127,16 @@
         </td>
         
             </tr>
+            @endif
             @endforeach
-    
+       @endforeach
         </table>
-        </div>
-        <div class="col">
         </div>
     </div>
 </div>
-
+@else
+<p> The inventory is empty. No sales can be made. </p>
+@endif
 
     
     

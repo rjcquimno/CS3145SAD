@@ -11,7 +11,7 @@
                     Uptown<span class="text-black">Corporate</span>Hotel
                 </h1>
                 
-                @if (Auth::check())
+                @if (DB::table('users')->first())
                 
                 @else
                 <div>
