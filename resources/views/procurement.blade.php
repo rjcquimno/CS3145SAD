@@ -52,11 +52,14 @@
              @endforeach
             @else
                     <tr class="border-2 border-black text-center">
-                    <td class="border-2 border-black">INVENTORY IS EMPTY</td>
-                    <td class="border-2 border-black">INVENTORY IS EMPTY</td>
-                    <td class="border-2 border-black">INVENTORY IS EMPTY</td>
-                    <td class="border-2 border-black">INVENTORY IS EMPTY</td>
-                    <td class="border-2 border-black">INVENTORY IS EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
+                        <td class="border-2 border-black">EMPTY</td>
             @endif
     
     </table>
