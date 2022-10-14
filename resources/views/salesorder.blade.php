@@ -114,8 +114,7 @@
         
         <td class="border-2 border-black">{{$inventory['item_discount']}}</td>
         <td class="border-2 border-black">{{$inventory['expire_date']}}</td>
-        <td class="border-2 border-black">
-           
+
             <livewire:addtocart :itemId="$inventory['item_barcode']" />
             
         
