@@ -66,6 +66,7 @@
     
 
 
+    @if($ordercontentlist)
     <div class="col">
         Order Contents
        <table class="table-auto overflow-y-scroll">
@@ -77,7 +78,6 @@
             <td class="border-2 border-black">Discount</td>    
 
         </tr>
-    @if($ordercontentlist)
     @foreach ($ordercontentlist as $ordercontents)
     @csrf
         
