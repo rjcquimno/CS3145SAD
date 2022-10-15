@@ -14,17 +14,17 @@
     <table class="table-auto m-0">
         <tr class="font-bold text-center">
         
-        <td class="border-2 border-black">Item ID</td>
-        <td class="border-2 border-black">Item Barcode</td>
-        <td class="border-2 border-black">Item Name</td>
-        <td class="border-2 border-black">Item Size</td>
-        <td class="border-2 border-black">Item Description</td>
-        <td class="border-2 border-black">Item Selling Price</td>
-        <td class="border-2 border-black">Item Procurement Cost</td>
-        <td class="border-2 border-black">Item Discount</td>
-        <td class="border-2 border-black">Item Quantity</td>
-        <td class="border-2 border-black">Item Restock Value</td>
-        <td class="border-2 border-black">Item Out of Stock Value</td>
+        <td class="border-2 border-black">ID</td>
+        <td class="border-2 border-black">Barcode</td>
+        <td class="border-2 border-black">Name</td>
+        <td class="border-2 border-black">Size</td>
+        <td class="border-2 border-black">Description</td>
+        <td class="border-2 border-black">Selling Price</td>
+        <td class="border-2 border-black">Procurement Cost</td>
+        <td class="border-2 border-black">Discount</td>
+        <td class="border-2 border-black">Quantity</td>
+        <td class="border-2 border-black">Restock Value</td>
+        <td class="border-2 border-black">Out of Stock Value</td>
         <td class="border-2 border-black">Expiry Date</td>
         @if($inventorylist && $inventorylinelist)
         <td class="border-2 border-black"></td>
